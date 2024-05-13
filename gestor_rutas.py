@@ -1,9 +1,9 @@
 import networkx as nx
 
 # Función para leer el archivo y crear el grafo
-def crear_grafo():
+def crear_grafo(ruta_archivo):
     grafo = nx.Graph()
-    with open('rutas.txt', 'r') as file:
+    with open(ruta_archivo, 'r') as file:
         for linea in file:
             inicio, fin, costo = linea.strip().split(',')
             costo = int(costo)
@@ -18,17 +18,19 @@ def encontrar_rutas(grafo, inicio):
         if destino != inicio:
             costo_total = costos[destino]
             print(f"Desde {inicio} hasta {destino}: {ruta}, Costo total: {costo_total}")
-            
 
 # Función para mostrar las posibles destinos desde una estación de salida
 def mostrar_destinos(grafo, inicio):
     destinos = list(grafo.neighbors(inicio))
     print(f"Posibles destinos desde {inicio}: {destinos}")
 
-
 # Función principal
 def main():
-    grafo = crear_grafo()
+    ruta_archivo = "C:/Users/Usuario/Documents/GitHub/Radio/HDT9-algoritmos/rutas.txt"
+    grafo = crear_grafo(ruta_archivo)
+    print("Grafo cargado:")
+    print(grafo.nodes())  # Imprimir las estaciones en el grafo
+    print()
     while True:
         inicio = input("Ingrese la estación de salida (o 'salir' para terminar): ").strip()
         if inicio.lower() == 'salir':
