@@ -18,3 +18,9 @@ def encontrar_rutas(grafo, inicio):
         if destino != inicio:
             costo_total = costos[destino]
             print(f"Desde {inicio} hasta {destino}: {ruta}, Costo total: {costo_total}")
+            
+
+# Función para mostrar las posibles destinos desde una estación de salida
+def mostrar_destinos(grafo, inicio):
+    destinos = list(grafo.neighbors(inicio))
+    print(f"Posibles destinos desde {inicio}: {destinos}")
