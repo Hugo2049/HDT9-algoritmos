@@ -3,6 +3,10 @@
 
 Este programa está diseñado para encontrar rutas más cortas en un sistema de transporte representado como un grafo ponderado. Utiliza el algoritmo de Dijkstra para encontrar las rutas más cortas desde una estación de salida dada.
 
+## Autor
+
+Hugo Ernesto Barillas Villagrán - 23306
+
 ## Requisitos
 
 - Python 3.11
