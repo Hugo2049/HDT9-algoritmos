@@ -24,3 +24,20 @@ def encontrar_rutas(grafo, inicio):
 def mostrar_destinos(grafo, inicio):
     destinos = list(grafo.neighbors(inicio))
     print(f"Posibles destinos desde {inicio}: {destinos}")
+
+
+# Función principal
+def main():
+    grafo = crear_grafo()
+    while True:
+        inicio = input("Ingrese la estación de salida (o 'salir' para terminar): ").strip()
+        if inicio.lower() == 'salir':
+            break
+        if inicio not in grafo:
+            print("Estación no encontrada. Por favor, ingrese una estación válida.")
+            continue
+        mostrar_destinos(grafo, inicio)
+        encontrar_rutas(grafo, inicio)
+
+if __name__ == "__main__":
+    main()
